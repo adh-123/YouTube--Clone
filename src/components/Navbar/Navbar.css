@@ -1,0 +1,157 @@
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 2%;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.nav-left .menu-icon {
+    width: 22px;
+    cursor: pointer;
+    margin-right: 18px;
+}
+
+
+.nav-left .logo {
+    height: 26px;  
+    width: auto;
+    cursor: pointer;
+    display:block;
+}
+
+
+.nav-middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav-middle .search-box {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    border-radius: 25px;
+    background: #fff;
+}
+
+
+.nav-middle .search-box input {
+    flex: 1;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+
+.nav-middle .search-box img {
+    width: 16px;
+    cursor: pointer;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.yt-signin-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: white;
+    border: 1px solid #3ea6ff;
+    color: #065fd4;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.yt-signin-btn:hover {
+    background: #e8f0fe;
+}
+
+
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Popup */
+.profile-popup {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 250px;
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+
+.profile-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.email {
+    font-size: 13px;
+    color: gray;
+}
+
+
+.signout {
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.signout:hover {
+    background:red;
+    color:white;
+}

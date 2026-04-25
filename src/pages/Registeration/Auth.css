@@ -1,0 +1,87 @@
+.auth-container {
+  height: 100vh;
+  background: url("https://wallpapercave.com/wp/wp2610943.jpg")
+    no-repeat center center/cover;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+}
+
+.auth-box {
+  width: 350px;
+  padding: 30px;
+  border-radius: 15px;
+  color: grey;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.50);
+}
+  
+
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg,#3b82f6,#2563eb);
+  color: white;
+  border: none;
+  border-radius: 25px;
+}
+
+.active {
+  border-bottom: 2px solid white;
+}
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+}
+.auth-box h2{
+  text-align: center;
+  padding:10px;
+  color:black
+}
+
+.input-box {
+  position: relative;
+  
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 15px 17px 12px 10px; /* left + right spacing */
+  border-radius: 30px;
+  border: none;
+  background: #eee;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* ICON FIX */
+.icon {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: gray;
+}
+.input-box input::placeholder{
+  text-align:left;
+}
+input:focus {
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}

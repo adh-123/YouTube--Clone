@@ -1,0 +1,240 @@
+.play-video {
+    flex-basis:69%;
+    border: 10px;
+    overflow:hidden;
+   
+  
+}
+.play-video iframe{
+  width: 100%;
+  height: 500px;
+  border-radius :12px ;
+}
+
+.play-video video iframe{
+    width:100%;
+    height:37vw;
+    border-radius: 12px;
+    
+}
+.play-video h3 {
+    margin-top:10px;
+    font-weight:500;
+    font-size:16px;
+    font-family:"Roboto" ,Arial,sans-serif;
+    line-height:1.3;
+    color:black;
+}
+ .play-video-info{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    font-size:14px;
+    margin-top: 10px;
+    color:#5a5a5a;
+    font-family:"Roboto" ,Arial,sans-serif;
+ }
+
+.play-video-info img {
+    width:20px;
+    margin-right:8px;
+    
+
+}
+.play-video-info span{
+    display: inline-flex;
+    align-items:center;
+    margin-left:15px;
+    font-family:"Roboto" ,Arial,sans-serif;
+
+}
+ 
+
+.publisher{
+    display:flex;
+    align-items:center;
+    margin-top:20px;
+    font-family:"Roboto" ,Arial,sans-serif;
+}
+.publisher div{
+    flex:1;
+    line-height: 18px;
+}
+.publisher img{
+    width:40px;
+    border-radius:50%;
+    margin-right:10px;
+}
+.publisher div p{
+    color:#000;
+    font-weight:600;
+    font-size:18px;
+    font-family:"Roboto" ,Arial,sans-serif;
+}
+.publisher div span{
+    font-size:13px;
+    color:#5a5a5a;
+    font-family:"Roboto" ,Arial,sans-serif;
+}
+.publisher button{
+    width:auto;
+    height:40px;
+    background: red;
+    color:white;
+    padding:8px 30px;
+    border:0;
+    border-radius: 25px;
+    outline: 0;
+    cursor:pointer;
+    font-family:"Roboto" ,Arial,sans-serif;
+}
+.video-description{
+    padding-left:55px;
+    margin:15px 0;
+    font-family:"Roboto" ,Arial,sans-serif;
+
+
+}
+.video-description p{
+    font-size:13px;
+    margin-bottom:5px;
+    color:#5a5a5a;
+    font-family:"Roboto" ,Arial,sans-serif;
+
+}
+.comment {
+    display:flex;
+    align-items:flex-start;
+    margin:20px 0;
+    font-family:"Roboto" ,Arial,sans-serif;
+
+}
+.comment img{
+    width:35px;
+    border-radius:50%;
+    margin-right:15px;
+}
+.comment h3{
+    font-size: 14px;
+    margin-bottom:2px;
+    font-family:"Roboto" ,Arial,sans-serif;
+}
+.comment h3 span{
+    font-size:12px;
+    color:#5a5a5a;
+    font-weight:500;
+    margin-left:8px;
+    font-family:"Roboto" ,Arial,sans-serif;
+
+}
+.comment-action{
+    display:flex;
+    align-items:center;
+    margin:8px 0;
+    font-size:14px;
+
+}
+.comment-action img{
+    border-radius: 0;
+    width:20px;
+    margin-right:5px;
+}
+.comment-action span{
+    margin-right:20px;
+    color:#5a5a5a;
+    font-family:"Roboto" ,Arial,sans-serif;
+}
+/* .loader {
+  position: fixed;             
+  top: 50%;
+  left: 50%;
+ 
+
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ddd;
+  border-top: 5px solid red;
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+              
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg) 
+  }
+} */
+
+
+.playvideo-skeleton {
+  animation: pulse 1.5s infinite;
+}
+
+
+.video-box {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #e2e2e2;
+  border-radius: 12px;
+}
+
+.playvideo-skeleton .title {
+  width: 70%;
+  height: 16px;
+  background: #e2e2e2;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+.channel-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+
+.channel-text {
+  flex: 1;
+}
+
+.channel-text .line {
+  height: 12px;
+  background: #e2e2e2;
+  margin-bottom: 6px;
+  border-radius: 4px;
+}
+
+.channel-text .small {
+  width: 60%;
+}
+
+.playvideo-skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.playvideo-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
