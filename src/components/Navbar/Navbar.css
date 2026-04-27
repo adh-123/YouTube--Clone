@@ -155,3 +155,16 @@ nav {
     background:red;
     color:white;
 }
+@media (max-width: 768px) {
+  .nav-middle {
+    display: none;   /* hide search */
+  }
+
+  .nav-left .logo {
+    width: 100px;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+}

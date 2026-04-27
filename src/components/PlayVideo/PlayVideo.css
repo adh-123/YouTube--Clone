@@ -238,3 +238,16 @@
   50% { opacity: 1; }
   100% { opacity: 0.6; }
 }
+@media (max-width: 768px) {
+  .play-container {
+    flex-direction: column;
+  }
+
+  .play-video {
+    width: 100%;
+  }
+
+  .recommended {
+    width: 100%;
+  }
+}
