@@ -52,23 +52,6 @@
 
 
 
-
-.sidebar.small-sidebar .side-link {
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 0;
+.side-link:active {
+    background-color:gray;
 }
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    left: -220px;
-    z-index: 100;
-  }
-
-  .sidebar.active {
-    left: 0;
-  }
-}
-
-
