@@ -22,7 +22,7 @@ function Signin() {
     }
 
     try {
-      const res = await fetch("https://youtube-backend-1-8m3s.onrender.com/signin", {
+      const res = await fetch("https://youtube-backend-1-8m3s.onrender.com/signin/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
