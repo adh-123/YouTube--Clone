@@ -6,7 +6,7 @@
   justify-content:center ;
   align-items: center;
   padding:20px;
-  pointer-events: none;
+  
   
 }
 
@@ -17,7 +17,7 @@
   color: grey;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  pointer-events: none;
+
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.50);
@@ -63,7 +63,7 @@
 
 .input-box input {
   width: 100%;
-  padding: 15px 17px 12px 10px; /* left + right spacing */
+  padding: 15px 17px 12px 10px; 
   border-radius: 30px;
   border: none;
   background: #eee;
@@ -72,7 +72,6 @@
   box-sizing: border-box;
 }
 
-/* ICON FIX */
 .icon {
   position: absolute;
   right: 30px;

@@ -20,8 +20,9 @@ const App = () => {
   const isVideoPage = location.pathname.includes("/video");
 
   const isAuthPage =
-  location.pathname.includes("/signin") ||
-  location.pathname.includes("/signup");
+    location.pathname === "/signin" ||
+    location.pathname === "/signup";
+
   return (
     <div>
 

@@ -60,7 +60,7 @@ function Signin() {
       <div className="auth-box">
 
         <h2>
-          <span className="active">SIGN IN</span>
+          <span className="active">SIGN IN |</span>
           <span onClick={() => navigate("/signup")}>SIGN UP</span>
         </h2>
 
