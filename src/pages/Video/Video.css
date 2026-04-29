@@ -1,10 +1,31 @@
-.play-container{
-    background:#f9f9f9;
-    gap:20px;
-    padding:20px 2%;
-    display:flex;
-    justify-content:space-between;
 
-    flex-wrap: nowrap;        
-    align-items: flex-start;
+.play-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 0;     
+    transition: all 0.3s ease;
+    max-width:1400px;
+    margin:auto;
+}
+
+
+.large-container {
+    margin-left: 240px;
+}
+
+
+.play-video {
+    flex-basis: 1;
+}
+
+.recommended {
+    flex-basis: 30%;
+}
+
+@media (max-width: 768px) {
+  .play-container {
+    flex-direction: column;
+    margin-left: 0;
+  }
 }

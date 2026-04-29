@@ -154,17 +154,22 @@ nav {
 .signout:hover {
     background:red;
     color:white;
-}
+/* }
 @media (max-width: 768px) {
   .nav-middle {
-    display: none;   /* hide search */
+    display: flex;
   }
 
-  .nav-left .logo {
-    width: 100px;
+  .nav-middle .search-box {
+    width: 50%;   /* shrink */
   }
 
-  .nav-right {
-    gap: 10px;
+  .nav-middle .search-box input {
+    font-size: 12px;
   }
-}
+
+  .nav-middle .search-box img {
+    width: 16px;
+    display: block;
+  }
+} */

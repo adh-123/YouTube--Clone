@@ -94,11 +94,6 @@ const PlayVideo = ({ videoId }) => {
     <h3>{apiData?.snippet?.title}</h3>
 
  </>)}
-
-
-      
-      
-
     
       <div className="play-video-info">
         <p>

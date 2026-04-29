@@ -1,57 +1,98 @@
-
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 220px;
+    width: 100px;                 
     height: 100vh;
     background: #fff;
     padding-top: 80px;
-    padding-left: 10px;
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
     overflow-y: auto;
+    z-index: 10;
   
 }
 
 
-.sidebar.small-sidebar {
-    width: 80px;
+.sidebar.active {
+    width: 240px;                
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    left: -260px;
+    width: 240px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+}
+
 
 .sortcut-links {
     display: flex;
     flex-direction: column;
+    align-items: center;        
+    transition: all 0.3s ease;
+}
+
+
+.sidebar.active .sortcut-links {
+    align-items: flex-start;
+    padding-left: 10px;
 }
 
 
 .side-link {
     display: flex;
+    flex-direction: column;      
     align-items: center;
-    gap: 15px;
-    padding: 10px 12px;
-    border-radius: 12px;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 0;
+    width: 70%;
     cursor: pointer;
-    transition: 0.2s;
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
 
+
+.sidebar.active .side-link {
+    flex-direction: row;        
+    justify-content: flex-start;
+    padding: 10px 20px;
+    gap: 20px;
+}
 
 .side-link svg {
     font-size: 22px;
-    flex-shrink: 0;
+    min-width: 24px;
 }
 
 .side-link p {
-   
-    display:none;
+    font-size: 11px;            
+    margin: 0;
+    font-weight: 500;
 }
 
+
+.sidebar.active .side-link p {
+    font-size: 14px;
+}
 
 .side-link:hover {
     background: #f2f2f2;
 }
+.side-link.active {
+    background: #e5e5e5;
+}
 
-
-
-.side-link:active {
-    background-color:gray;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 9;
 }

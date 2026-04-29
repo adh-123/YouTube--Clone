@@ -1,8 +1,8 @@
 .feed {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-column-gap:o.5cm;
-    grid-row-gap:0.5px;
+    grid-column-gap:0.1cm;
+    grid-row-gap:0.1cm;
     margin-top:10px;
    
 }
@@ -27,7 +27,7 @@
 }
 
 .card h2{
-    font-size:14px;
+    font-size:12px;
     font-weight: 600;
     color:grey;
     margin:5px 0;
@@ -36,7 +36,7 @@
 
 }
 .card h3{
-    font-size:16px;
+    font-size:12px;
     font-weight: 600;
     color:#000;
     margin:6px 0;
@@ -44,7 +44,7 @@
 
 }
 .card p{
-    font-size:14px;
+    font-size:12px;
     font-family:"Roboto" ,Arial,sans-serif;
     color:grey;
 }
@@ -112,25 +112,18 @@
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
-  }
-}
-.feed {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
+  }}
 /* Tablet */
 @media (max-width: 1024px) {
   .feed {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .feed {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 

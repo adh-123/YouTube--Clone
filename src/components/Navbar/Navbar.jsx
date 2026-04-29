@@ -14,6 +14,7 @@ const Navbar = ({ setSidebar }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [showMenu, setShowMenu] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   // const [sidebar,setSidebar]=useState(true)
 
   const navigate = useNavigate();
@@ -72,13 +73,13 @@ const Navbar = ({ setSidebar }) => {
       <img className='logo' src={logo} alt="" />
     </Link>
   </div>
-
+{/* 
   <div className="nav-middle flex-div">
     <div className="search-box flex-div">
       <input type='text' placeholder='search' />
       <img src={search_icon} alt="" />
     </div>
-  </div>
+  </div> */}
 
   <div className="nav-right flex-div">
     {/* keep your existing login/profile code */}
