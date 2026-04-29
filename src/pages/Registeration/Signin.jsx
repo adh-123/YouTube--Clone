@@ -4,11 +4,10 @@ import { FaEnvelope } from "react-icons/fa";
 import "./Auth.css";
 
 function Signin() {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
-  const [isError, SetIsError] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const navigate = useNavigate();
 
@@ -17,41 +16,43 @@ function Signin() {
 
     if (!email || !password) {
       setMsg("Enter all fields ❌");
-      SetIsError(true);
+      setIsError(true);
       return;
     }
 
     try {
-      const res = await fetch("https://youtube-backend-1-8m3s.onrender.com/signin/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        "https://youtube-backend-1-8m3s.onrender.com/signin",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
-      const data = res.json()
+      const data = await res.json(); // ✅ FIXED
+
+      console.log("API Response:", data);
+
       if (!res.ok) {
         setMsg(data.detail || "Login failed ❌");
+        setIsError(true);
       } else {
         setMsg("Login successful ✅");
-        SetIsError(false);
+        setIsError(false);
 
-        console.log("API Response:", data);
+        // ✅ STORE USER (IMPORTANT)
+        localStorage.setItem("user", JSON.stringify(data));
 
-        // ✅ STORE PROPERLY
-        localStorage.setItem("isLoggedIn", "true");
-        localStorage.setItem("username", data.username);
-        localStorage.setItem("email", data.email);
-
-        navigate('/');
-        window.location.reload();   // optional for now
+        navigate("/");
+        window.location.reload(); // ✅ refresh Navbar
       }
-
-    } catch(e) {
-      console.log("error login:",e)
+    } catch (e) {
+      console.log("error login:", e);
       setMsg("Server error ❌");
-      SetIsError(true);
+      setIsError(true);
     }
   };
 
@@ -65,7 +66,6 @@ function Signin() {
         </h2>
 
         <form onSubmit={handleLogin}>
-
           <div className="input-box">
             <input
               type="email"
@@ -86,7 +86,6 @@ function Signin() {
           </div>
 
           <button type="submit">SIGN IN</button>
-
         </form>
 
         {msg && (
