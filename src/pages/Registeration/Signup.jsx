@@ -28,7 +28,7 @@ function Signup() {
     }
 
     try {
-      const res = await ("https://youtube-backend-1.onrender.com/signin", {
+      const res = await fetch("https://youtube-backend-1-8m3s.onrender.com/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

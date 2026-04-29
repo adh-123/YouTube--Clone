@@ -22,7 +22,7 @@ function Signin() {
     }
 
     try {
-      const res = await ("https://youtube-backend-1.onrender.com/signin", {
+      const res = await fetch("https://youtube-backend-1-8m3s.onrender.com/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,8 +30,7 @@ function Signin() {
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json();
-
+      const data = res.json()
       if (!res.ok) {
         setMsg(data.detail || "Login failed ❌");
       } else {
@@ -49,7 +48,8 @@ function Signin() {
         window.location.reload();   // optional for now
       }
 
-    } catch {
+    } catch(e) {
+      console.log("error login:",e)
       setMsg("Server error ❌");
       SetIsError(true);
     }
