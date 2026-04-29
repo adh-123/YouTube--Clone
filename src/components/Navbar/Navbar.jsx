@@ -1,42 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react'
-import './Navbar.css'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect, useRef } from "react";
+import "./Navbar.css";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
-
 import { IoMdMenu } from "react-icons/io";
-import logo from '../../assets/logo.png'
-import search_icon from '../../assets/search.png'
-import profile_icon from '../../assets/chi.jpg'
+
+import logo from "../../assets/logo.png";
+import profile_icon from "../../assets/chi.jpg";
 
 const Navbar = ({ setSidebar }) => {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  // const [sidebar,setSidebar]=useState(true)
 
   const navigate = useNavigate();
-  const popupRef = useRef(); 
+  const popupRef = useRef();
 
-
+  // ✅ Load user from localStorage
   useEffect(() => {
-  
-      const loginStatus = localStorage.getItem("isLoggedIn");
-      const name = localStorage.getItem("username");
-      const mail = localStorage.getItem("email");
-      if (loginStatus === "true") {
-        setIsLoggedIn(true);
-        setUsername(name || "");
-        setEmail(mail || "");
-      } else {
-        setIsLoggedIn(false);
-      }
-    
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (storedUser) {
+      setIsLoggedIn(true);
+      setUser(storedUser);
+    } else {
+      setIsLoggedIn(false);
+    }
   }, []);
 
-
+  // ✅ Close popup when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (popupRef.current && !popupRef.current.contains(e.target)) {
@@ -45,77 +36,67 @@ const Navbar = ({ setSidebar }) => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
+  // ✅ Logout
   const handleLogout = () => {
-    localStorage.clear();
+    localStorage.removeItem("user");
+    localStorage.removeItem("isLoggedIn");
+
     setIsLoggedIn(false);
+    setUser(null);
     setShowMenu(false);
+
     navigate("/signin");
   };
 
   return (
-   <nav className='nav flex-div'>
+    <nav className="nav flex-div">
+      {/* LEFT */}
+      <div className="nav-left">
+        <IoMdMenu
+          size={22}
+          className="menu-icon"
+          onClick={() => setSidebar((prev) => !prev)}
+        />
 
-  <div className="nav-left">
-    <IoMdMenu size={22}
-      className='menu-icon'
-      
-      onClick={() =>{
-       
-
-       setSidebar(prev => !prev)}}/>
-
-    <Link to='/'>
-      <img className='logo' src={logo} alt="" />
-    </Link>
-  </div>
-{/* 
-  <div className="nav-middle flex-div">
-    <div className="search-box flex-div">
-      <input type='text' placeholder='search' />
-      <img src={search_icon} alt="" />
-    </div>
-  </div> */}
-
-  <div className="nav-right flex-div">
-    {/* keep your existing login/profile code */}
-
+        <Link to="/">
+          <img className="logo" src={logo} alt="" />
+        </Link>
       </div>
 
+      {/* RIGHT */}
       <div className="nav-right flex-div">
-
         {isLoggedIn ? (
           <div className="profile-box">
-
-            
             <img
               src={profile_icon}
               alt="user"
               className="profile-icon"
               onClick={(e) => {
-                e.stopPropagation(); 
-                setShowMenu(prev => !prev);
+                e.stopPropagation();
+                setShowMenu((prev) => !prev);
               }}
             />
 
-          
             {showMenu && (
               <div
                 className="profile-popup"
                 ref={popupRef}
-                onClick={(e) => e.stopPropagation()} 
+                onClick={(e) => e.stopPropagation()}
               >
-
                 <div className="profile-info">
                   <img src={profile_icon} alt="user" />
 
                   <div>
-                    <p className="username">{username}</p>
-                    <p className="email">{email}</p>
+                    <p className="username">
+                      {user?.username || "Guest"}
+                    </p>
+                    <p className="email">
+                      {user?.email || ""}
+                    </p>
                   </div>
                 </div>
 
@@ -124,28 +105,23 @@ const Navbar = ({ setSidebar }) => {
                 <div className="signout" onClick={handleLogout}>
                   <p>Sign out</p>
                 </div>
-
               </div>
             )}
-
           </div>
         ) : (
-
           <button
             className="yt-signin-btn"
-            onClick={() => navigate('/signin')}
+            onClick={() => navigate("/signin")}
           >
             <span className="icon-circle">
               <FaRegUserCircle />
             </span>
             <span>Sign in</span>
           </button>
-
         )}
-
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;
