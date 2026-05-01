@@ -15,13 +15,12 @@ const Navbar = ({ setSidebar }) => {
   const navigate = useNavigate();
   const popupRef = useRef();
 
-  // ✅ Load user from localStorage
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     setUser(storedUser);
   }, []);
 
-  // ✅ Close popup
+  
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (popupRef.current && !popupRef.current.contains(e.target)) {
@@ -33,14 +32,14 @@ const Navbar = ({ setSidebar }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // ✅ Logout
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
     setShowMenu(false);
 
     navigate("/");
-    window.location.reload(); // refresh UI
+    window.location.reload(); 
   };
 
   return (
@@ -59,7 +58,7 @@ const Navbar = ({ setSidebar }) => {
         </Link>
       </div>
 
-      {/* RIGHT */}
+      
       <div className="nav-right flex-div">
 
         {user ? (

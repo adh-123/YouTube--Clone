@@ -26,7 +26,6 @@ const Sidebar = ({ sidebar, category, setCategory, setSidebar }) => {
         ></div>
       )}
 
-      {/* ===== Sidebar ===== */}
       <div className={`sidebar ${sidebar ? "active" : ""}`}>
 
         <div className="sortcut-links">
